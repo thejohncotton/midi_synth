@@ -1,0 +1,24 @@
+# Midisynth
+
+## Section
+
+```elixir
+{:ok, synth} = MIDISynth.start_link([])
+```
+
+```elixir
+MIDISynth.Keyboard.play(synth, 64, 100, 80)
+MIDISynth.Keyboard.play(synth, 62, 100, 80)
+MIDISynth.Keyboard.play(synth, 60, 100, 80)
+MIDISynth.Keyboard.play(synth, 62, 100, 80)
+MIDISynth.Keyboard.play(synth, 64, 100, 80)
+MIDISynth.Keyboard.play(synth, 64, 100, 80)
+MIDISynth.Keyboard.play(synth, 64, 100, 80)
+```
+
+```elixir
+Enum.each(40..100, fn x ->
+  MIDISynth.Keyboard.play(synth, x, 100, 80)
+  Process.sleep(100)
+end)
+```
